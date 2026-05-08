@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+pandas
+prophet
+matplotlib
+geopy
+supabase
+python-dotenv
+requests

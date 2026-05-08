@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/ParkWise/static/css/main.4187a1b8.css",
+    "main.js": "/ParkWise/static/js/main.3aa63a7d.js",
+    "static/js/453.7a9de3b4.chunk.js": "/ParkWise/static/js/453.7a9de3b4.chunk.js",
+    "index.html": "/ParkWise/index.html",
+    "main.4187a1b8.css.map": "/ParkWise/static/css/main.4187a1b8.css.map",
+    "main.3aa63a7d.js.map": "/ParkWise/static/js/main.3aa63a7d.js.map",
+    "453.7a9de3b4.chunk.js.map": "/ParkWise/static/js/453.7a9de3b4.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4187a1b8.css",
+    "static/js/main.3aa63a7d.js"
+  ]
+}
