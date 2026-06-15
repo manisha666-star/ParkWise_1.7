@@ -49,7 +49,18 @@ function ParkingSpotsList() {
     const data = await res.json();
     const spotsArray = Array.isArray(data) ? data : (Array.isArray(data.data) ? data.data : []);
     if (spotsArray.length < PAGE_SIZE) setHasMore(false);
-    setSpots(prev => [...prev, ...spotsArray]);
+    setSpots(prev => {
+      const merged = [...prev, ...spotsArray];
+
+      const unique = merged.filter(
+        (spot, index, self) =>
+          index === self.findIndex(
+            s => s.facilityid === spot.facilityid
+          )
+      );
+
+      return unique;
+    });
     setLoading(false);
   }, [page]);
 

@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from app.api import nearby_parking, list_available_parking_spots, fastapi_facility_ID, insert_monitor_job
+from app.api import nearby_parking, list_available_parking_spots, insert_monitor_job
 from app.auth.routes import signup, login, get_profile, premium_feature,upgrade_subscription  # import functions
 from fastapi.security import HTTPBearer
 from fastapi.openapi.utils import get_openapi
@@ -23,7 +23,7 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 # Mount API route groups
 app.include_router(nearby_parking.router)
 app.include_router(list_available_parking_spots.router)
-app.include_router(fastapi_facility_ID.router)
+# app.include_router(fastapi_facility_ID.router)
 app.include_router(insert_monitor_job.router)
 
 # Explicit auth routes
