@@ -1,5 +1,7 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import ParkingMap from '../components/ParkingMap';
+import { useNavigate } from 'react-router-dom';
+
 
 const fallbackImages = [
   process.env.PUBLIC_URL + '/parking1.jpg',
@@ -20,6 +22,7 @@ function normalizeString(str) {
 }
 
 function ParkingSpotsList() {
+  const navigate = useNavigate();
   const [spots, setSpots] = useState([]);
   const [page, setPage] = useState(0);
   const [loading, setLoading] = useState(false);
@@ -255,6 +258,20 @@ function ParkingSpotsList() {
           spots.map((spot, idx) => (
             <div
               key={`${spot.facilityid || spot.id}-${idx}`}
+              onClick={() =>{
+                console.log("Clicked Spot:", spot);
+
+                navigate(`/parking-detail/${spot.facilityid}`, {
+                  state: {
+                    spot: {
+                      ...spot,
+                      name: spot.nom_parking,
+                      free_places: spot.counterfreeplaces
+                    }
+                  }
+                })
+              }}
+
               className="card mb-3 shadow-sm"
               style={{
                 display: 'flex',
@@ -286,6 +303,7 @@ function ParkingSpotsList() {
               <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'flex-start', justifyContent: 'center' }}>
                 <h5 style={{ margin: 0, marginBottom: 8 , color: 'rgb(97 107 98)'}}>{spot.nom_parking || spot.name}</h5>
                 <a
+                  onClick={(e) => e.stopPropagation()}
                   href={`https://www.google.com/maps/dir/?api=1&origin=Current+Location&destination=${spot.latitude},${spot.longitude}`}
                   target="_blank"
                   rel="noopener noreferrer"
