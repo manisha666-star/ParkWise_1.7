@@ -223,12 +223,29 @@ function Home() {
           }}
         />
         <div className="container" style={{ paddingTop: '1.5rem', paddingBottom: '0', position: 'relative', zIndex: 2, maxWidth: 1200 }}>
-          <h1 className="fw-bold mb-3" style={{ fontSize: '2.5rem', color: '#222', textShadow: '0 2px 8px rgba(255,255,255,0.5)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
-            Smart Event Aware Parking Prediction System
+          <h1
+            className="fw-bold mb-3"
+            style={{
+              fontSize: '3.2rem',
+              color: '#222',
+              lineHeight: '1.2'
+            }}
+          >
+            Find Smart Parking Near You
           </h1>
-          <p className="lead mb-4" style={{ color: '#222', fontWeight: 500, fontSize: '1.15rem', textShadow: '0 2px 8px rgba(255,255,255,0.5)' }}>
-            Predict future parking availability near you based on real-time data and city events
+
+          <p
+            className="lead mb-4"
+            style={{
+              maxWidth: '700px',
+              margin: '0 auto',
+              color: '#555'
+            }}
+          >
+            Real-time parking availability, event-aware predictions,
+            and intelligent parking recommendations across Paris.
           </p>
+          
 
           {/* Search Field */}
           <div className="mb-4 position-relative" style={{ maxWidth: 540, margin: '0 auto' }}>
@@ -383,6 +400,39 @@ function Home() {
         </div>
       </section>
 
+      <section
+        style={{
+          background: '#fff',
+          padding: '50px 0'
+        }}
+      >
+        <div className="container">
+          <div className="row text-center">
+
+            <div className="col-md-3">
+              <h2 className="fw-bold text-primary">500+</h2>
+              <p>Parking Facilities</p>
+            </div>
+
+            <div className="col-md-3">
+              <h2 className="fw-bold text-primary">95%</h2>
+              <p>Prediction Accuracy</p>
+            </div>
+
+            <div className="col-md-3">
+              <h2 className="fw-bold text-primary">24/7</h2>
+              <p>Real-Time Monitoring</p>
+            </div>
+
+            <div className="col-md-3">
+              <h2 className="fw-bold text-primary">10K+</h2>
+              <p>Monthly Searches</p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       {/* Features section */}
       <section className="py-5 bg-white">
         <div className="container">
@@ -432,13 +482,15 @@ function Home() {
             </div>
             {/* Text and parking list on the right */}
             <div className="col-12 col-md-7 p-4 p-md-5">
-              <h2 className="fw-bold mb-2" style={{ fontSize: '2rimage.pngem', color: '#222' }}>Popular Parking Spots</h2>
+              <h2 className="fw-bold mb-2" style={{ fontSize: '2rem', color: '#222' }}>Popular Parking Spots</h2>
               <div className="mb-3" style={{ fontSize: '1.15rem', color: '#444' }}>
                 Enjoy the convenience of booking a parking spot at the venue ahead of time, ensuring you have a space when you arrive for games, concerts, and more.
               </div>
-              <div className="mb-4" style={{ maxWidth: 400 }}>
+              <div className="mb-4" style={{ maxWidth: 550 }}>
                 {(Array.isArray(popularSpots) ? popularSpots : []).map(spot => (
+                  
                   <div key={spot.facilityid || spot.id}>
+                    
                     <a
                       href={`https://www.google.com/maps/dir/?api=1&origin=Current+Location&destination=${spot.latitude},${spot.longitude}`}
                       target="_blank"
@@ -458,6 +510,8 @@ function Home() {
           </div>
         </div>
       </section>
+
+      
 
       {/* Add the map here */}
       <div style={{

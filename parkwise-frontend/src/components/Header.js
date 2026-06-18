@@ -98,7 +98,8 @@ function Header() {
                 <Nav.Link as={Link} to="/monitor-parking" className="fw-semibold mx-2">MONITOR PARKING</Nav.Link>
               </>
             )}
-            <Nav.Link as={Link} to="#" className="fw-semibold mx-2">ABOUT</Nav.Link>
+            <Nav.Link as={Link} to="/about" className="fw-semibold mx-2">ABOUT</Nav.Link>
+            <Nav.Link as={Link} to="/contact" className="fw-semibold mx-2">CONTACT</Nav.Link>
             {user ? (
               <div style={{ position: 'relative', display: 'flex', alignItems: 'center' }} ref={dropdownRef}>
                

@@ -8,6 +8,7 @@ from fastapi_utils.tasks import repeat_every
 from app.api.cron_send_email import cron_send_email
 from app.api.cron_cleanup import delete_inactive_jobs
 from fastapi.middleware.cors import CORSMiddleware
+from app.api import contact
 
 bearer_scheme = HTTPBearer()
 
@@ -40,6 +41,8 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+app.include_router(contact.router)
 
 @app.get("/")
 def root():

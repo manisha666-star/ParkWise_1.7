@@ -10,6 +10,8 @@ import ParkingDetail from './pages/ParkingDetail';
 import ParkingList from './pages/ParkingList';
 import ParkingSpotsList from './pages/ParkingSpotsList';
 import Signup from './pages/Signup';
+import About from './pages/About';
+import Contact from "./pages/Contact";
 
 function App() {
   return (
@@ -26,6 +28,9 @@ function App() {
             <Route path="/forecast" element={<Forecast />} />
             <Route path="/monitor-parking" element={<MonitorParking />} />
             <Route path="/parking-detail/:id" element={<ParkingDetail />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            
           </Routes>
         </main>
         <Footer />

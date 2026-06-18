@@ -3,6 +3,7 @@ import { FaArrowLeft } from 'react-icons/fa';
 import { useLocation, useNavigate } from 'react-router-dom';
 import ParkingMap from '../components/ParkingMap';
 
+
 export default function ParkingDetail() {
   const location = useLocation();
   const navigate = useNavigate();
@@ -95,90 +96,134 @@ export default function ParkingDetail() {
               🟢 Open Now
             </div>
 
-            <p
-              style={{
-                marginTop: '15px',
-                color: '#666'
-              }}
-            >
-              Facility ID: {spot.facilityid}
-            </p>
-
-            <p>
-              📍 Latitude: {spot.latitude}
-              <br />
-              📍 Longitude: {spot.longitude}
-            </p>
 
             <div
               style={{
-                display: 'flex',
-                gap: '12px',
-                flexWrap: 'wrap',
-                marginTop: '15px'
+                background: '#f8fafc',
+                borderRadius: '16px',
+                padding: '25px',
+                marginTop: '25px'
               }}
             >
+              <h4
+                style={{
+                  fontWeight: '700',
+                  marginBottom: '15px'
+                }}
+              >
+                Vehicle Types
+              </h4>
 
-
-              <span className="badge bg-primary p-2">
-                ⭐ 4.6 Rating
-              </span>
-
-              <span className="badge bg-dark p-2">
-                🅿️ ID {spot.facilityid}
-              </span>
-            </div>
-
-            <div
-              style={{
-                marginTop: '25px',
-                background: '#f8f9fa',
-                borderRadius: '12px',
-                padding: '20px'
-              }}
-            >
-              <h4>Features</h4>
+              <div
+                style={{
+                  color: '#2f6d4f',
+                  fontWeight: '600',
+                  marginBottom: '20px',
+                  fontSize: '18px'
+                }}
+              >
+                Maximum Height : 1.9m
+              </div>
 
               <div
                 style={{
                   display: 'grid',
-                  gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
-                  gap: '12px',
-                  marginTop: '20px'
+                  gridTemplateColumns: 'repeat(6,1fr)',
+                  textAlign: 'center',
+                  gap: '15px'
+                }}
+              >
+                <div>
+                  <div style={{ fontSize: '42px' }}>🏍️</div>
+                  <div>2 Wheels</div>
+                </div>
+
+                <div>
+                  <div style={{ fontSize: '42px' }}>🚗</div>
+                  <div>Small</div>
+                </div>
+
+                <div>
+                  <div style={{ fontSize: '42px' }}>🚙</div>
+                  <div>Medium</div>
+                </div>
+
+                <div>
+                  <div style={{ fontSize: '42px' }}>🚘</div>
+                  <div>Large</div>
+                </div>
+
+                <div>
+                  <div style={{ fontSize: '42px' }}>🚐</div>
+                  <div>High Roof</div>
+                </div>
+
+                <div>
+                  <div style={{ fontSize: '42px' }}>🚲</div>
+                  <div>Bike</div>
+                </div>
+              </div>
+            </div>  
+            <div
+              style={{
+                marginTop: '30px',
+                background: '#f8fafc',
+                borderRadius: '16px',
+                padding: '24px'
+              }}
+            >
+              <h3
+                style={{
+                  marginBottom: '20px',
+                  fontWeight: '700'
+                }}
+              >
+                Features
+              </h3>
+
+              <div
+                style={{
+                  display: 'grid',
+                  gridTemplateColumns: 'repeat(2,1fr)',
+                  gap: '15px'
                 }}
               >
                 {[
                   '🚗 Self Parking',
                   '🔒 Secure Parking',
-                  '🌙 Open 24/7',
-                  '♿ Wheelchair Accessible',
-                  '📷 CCTV Monitoring',
-                  '🅿️ Covered Parking'
-                ].map((feature) => (
+                  '♿ Wheelchair Access',
+                  '📹 CCTV Monitoring',
+                  '🅿 Covered Parking',
+                  '🕒 Open 24/7'
+                ].map((item) => (
                   <div
-                    key={feature}
+                    key={item}
                     style={{
                       background: '#fff',
-                      border: '1px solid #e5e7eb',
+                      padding: '16px',
                       borderRadius: '12px',
-                      padding: '14px',
-                      fontWeight: 500,
-                      boxShadow: '0 2px 8px rgba(0,0,0,0.05)'
+                      border: '1px solid #e5e7eb',
+                      fontWeight: '500'
                     }}
                   >
-                    {feature}
+                    {item}
                   </div>
                 ))}
               </div>
             </div>
+            
+            <div style={{ marginTop: '30px' }}>
+              <h3>About this Parking</h3>
 
-            <div style={{ marginTop: '25px' }}>
-              <h4>About this Parking</h4>
-
-              <p style={{ color: '#666' }}>
-                This parking facility is part of the ParkWise smart parking
-                network. View real-time parking information, locate nearby
-                facilities, and get directions instantly.
+              <p
+                style={{
+                  color: '#555',
+                  lineHeight: '1.8'
+                }}
+              >
+                This parking facility is connected to the ParkWise smart parking network.
+                Drivers can view available parking information, navigate directly to the
+                facility and discover nearby parking options throughout Paris.
               </p>
             </div>
           </div>
@@ -189,28 +234,62 @@ export default function ParkingDetail() {
               style={{
                 background: '#fff',
                 borderRadius: '16px',
-                padding: '20px',
+                padding: '25px',
                 boxShadow: '0 2px 10px rgba(0,0,0,0.08)',
                 marginBottom: '20px'
               }}
             >
-              <h4>Parking Information</h4>
+              <h3>Parking Information</h3>
 
               <hr />
 
-              <p>⭐ 4.6 / 5</p>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
+                <div
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    marginTop: '10px',
+              
+                  }}
+                >
+                  <span
+                    style={{
+                      color: '#f5b301',
+                      fontSize: '24px',
+                      letterSpacing: '2.5px'
+                    }}
+                  >
+                    ★★★★★
+                  </span>
 
-              <p>🚗 Available Spaces: N/A</p>
+                  <span
+                    style={{
+                      marginLeft: '12px',
+                      color: '#2f6d4f',
+                      fontSize: '16px',
+                      fontWeight: '500'
+                    }}
+                  >
+                    79 Reviews
+                  </span>
+                </div>
 
-              <p>🕒 Open 24 Hours</p>
+                <div>🚗 Available Spaces: N/A</div>
 
-              <p>📍 Paris Region</p>
+                <div>🕒 Open 24 Hours</div>
+
+                <div>📍 Paris Region</div>
+              </div>
 
               <a
                 href={`https://www.google.com/maps/dir/?api=1&destination=${spot.latitude},${spot.longitude}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn-success w-100"
+                className="btn btn-success w-100 mt-4"
+                style={{
+                  borderRadius: '10px',
+                  fontWeight: '600'
+                }}
               >
                 Get Directions
               </a>
@@ -218,6 +297,9 @@ export default function ParkingDetail() {
               <button
                 className="btn btn-outline-secondary w-100 mt-2"
                 onClick={() => navigate(-1)}
+                style={{
+                  borderRadius: '10px'
+                }}
               >
                 <FaArrowLeft /> Back
               </button>
@@ -226,15 +308,63 @@ export default function ParkingDetail() {
             <div
               style={{
                 background: '#fff',
-                borderRadius: '18px',
-                padding: '20px',
-                boxShadow: '0 2px 12px rgba(0,0,0,0.08)'
+                borderRadius: '16px',
+                overflow: 'hidden',
+                boxShadow: '0 2px 10px rgba(0,0,0,0.08)'
               }}
             >
-              <h4 style={{ marginBottom: '15px' }}>📍 Parking Location</h4>
+              <div
+                style={{
+                  padding: '20px',
+                  borderBottom: '1px solid #eee'
+                }}
+              >
+                <h3 style={{ margin: 0 }}>Location</h3>
+              </div>
 
-              <ParkingMap spots={[spot]} />
+              <div
+                style={{
+                  height: '450px'
+                }}
+              >
+                <ParkingMap spots={[spot]} />
+              </div>
+
+              <div
+                style={{
+                  padding: '15px 20px',
+                  display: 'flex',
+                  justifyContent: 'space-between'
+                }}
+              >
+                <a
+                  href={`https://www.google.com/maps/search/?api=1&query=${spot.latitude},${spot.longitude}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    textDecoration: 'none',
+                    color: '#198754',
+                    fontWeight: '600'
+                  }}
+                >
+                  📍 View Full Map
+                </a>
+
+                <a
+                  href={`https://www.google.com/maps/dir/?api=1&destination=${spot.latitude},${spot.longitude}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    textDecoration: 'none',
+                    color: '#198754',
+                    fontWeight: '600'
+                  }}
+                >
+                  🚗 Get Guided There
+                </a>
+              </div>
             </div>
+
           </div>
         </div>
       </div>
