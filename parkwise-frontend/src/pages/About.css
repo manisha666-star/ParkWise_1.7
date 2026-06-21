@@ -1,0 +1,25 @@
+@media (max-width: 900px) {
+  .about-hero,
+  .about-two-column,
+  .about-impact {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .about-page .about-hero > div,
+  .about-page .about-two-column,
+  .about-page .about-impact,
+  .about-page section {
+    padding-left: 22px !important;
+    padding-right: 22px !important;
+  }
+
+  .about-hero h1 {
+    font-size: 36px !important;
+  }
+
+  .about-hero p {
+    font-size: 16px !important;
+  }
+}
